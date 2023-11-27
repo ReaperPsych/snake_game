@@ -12,13 +12,13 @@ red = (255, 0, 0)
 yellow = (255, 255, 0)
 green = (0, 128, 0)
 
-width, height = 750, 500
+width, height = 600, 400
 
 game_display = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Snake Game")
 
-message_font = pygame.font.SysFont('ubuntu', 30)
-score_font = pygame.font.SysFont('ubuntu', 25)
+message_font = pygame.font.SysFont('ubuntu', 15)
+score_font = pygame.font.SysFont('ubuntu', 20)
 
 clock = pygame.time.Clock()
 
@@ -26,7 +26,7 @@ snake_size = 10
 snake_speed = 15
 
 def print_score(score):
-    text = score_font.render("score: " + str(score), True, green)
+    text = score_font.render("Score: " + str(score), True, green)
     game_display.blit(text, [0,0])
 
 
@@ -59,8 +59,8 @@ def run_game():
 
         while game_close:
             game_display.fill(black)
-            game_over_message = message_font.render("game Over!", True, red)
-            game_display.blit(game_over_message, [width / 3, height / 3])
+            game_over_message = message_font.render("Game Over! press '1' to exit and '2' to continue", True, red)
+            game_display.blit(game_over_message, [width / 3.7, height / 3])
             print_score(snake_length -1)
             pygame.display.update()
 
